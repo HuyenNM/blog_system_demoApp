@@ -1,5 +1,6 @@
+
 <%= form_for(@comment) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :contend, placeholder: "Compose new comment..." %>
   </div>
@@ -8,3 +9,4 @@
 </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
+

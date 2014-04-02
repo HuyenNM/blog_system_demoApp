@@ -9,4 +9,5 @@
                                      data: { confirm: "You sure?" },
                                      title: entry.title %>
   <% end %>
+     <%= link_to pluralize(entry.comments.count, "comment"), newComment_path(:entry_id => entry.id) %>
 </li>

@@ -31,18 +31,14 @@ end
   end
 
   def destroy
-    binding.pry
-    @comment.destroy
-    binding.pry
+    @comment.destroy   
     #Comment.find(params[:id]).destroy
     redirect_to newComment_url(:entry_id => @comment.entry_id)
   end
 
-    def correct_user
-      binding.pry
+    def correct_user     
       @comment = current_user.comments.find(params[:id])     
       redirect_to newComment_url(:entry_id => @comment.entry_id) if @comment.nil?
-      binding.pry
     end
     private
 
