@@ -1,4 +1,5 @@
 
+ <% if ((!current_user.nil?) && current_user.following?(@entry_item.user)) %>
 <%= form_for(@comment) do |f| %>
    <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
@@ -9,4 +10,6 @@
 </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
+<% end %>
+
 
