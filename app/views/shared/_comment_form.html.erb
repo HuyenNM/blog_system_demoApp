@@ -1,5 +1,10 @@
 
- <% if ((!current_user.nil?) && current_user.following?(@entry_item.user)) %>
+ 
+
+
+
+
+ <% if (signed_in? && (current_user?(@entry_item.user)||current_user.following?(@entry_item.user)))%>
 <%= form_for(@comment) do |f| %>
    <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
